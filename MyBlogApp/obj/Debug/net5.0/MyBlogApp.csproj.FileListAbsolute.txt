@@ -462,3 +462,4 @@
 /Users/workbench/Projects/MyBlogApp/MyBlogApp/obj/Debug/net5.0/Razor/Views/Blogs/Index.cshtml.g.cs
 /Users/workbench/Projects/MyBlogApp/MyBlogApp/obj/Debug/net5.0/Razor/Views/Categories/Index.cshtml.g.cs
 /Users/workbench/Projects/MyBlogApp/MyBlogApp/obj/Debug/net5.0/Razor/Views/Shared/_SidebarPartial.cshtml.g.cs
+/Users/workbench/Projects/MyBlogApp/MyBlogApp/bin/Debug/net5.0/MyBlogApp

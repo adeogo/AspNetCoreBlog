@@ -14,7 +14,7 @@
         "outputPath": "/Users/workbench/Projects/MyBlogApp/MyBlogApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/workbench/.config/NuGet/NuGet.Config"
+          "/Users/workbench/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

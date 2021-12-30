@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{2A35CEB5-3718-43B1-A055-9C836B4A3238}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyBlogApp/Models/Blog.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyBlogApp/Data/Migrations/20211230200235_addCategoryIdColumnCreateCategoryTable.cs">
     <Files>
       <File FileName="MyBlogApp/Controllers/BlogsController.cs" Line="199" Column="2" />
       <File FileName="MyBlogApp/Views/Blogs/Index.cshtml" Line="20" Column="1" />
-      <File FileName="MyBlogApp/Views/Shared/_LoginPartial.cshtml" Line="58" Column="1" />
-      <File FileName="MyBlogApp/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
       <File FileName="MyBlogApp/Controllers/CategoriesController.cs" Line="15" Column="1" />
-      <File FileName="MyBlogApp/Views/Categories/Index.cshtml" Line="6" Column="1" />
-      <File FileName="MyBlogApp/Models/Category.cs" Line="12" Column="31" />
+      <File FileName="MyBlogApp/Models/Category.cs" Line="10" Column="1" />
       <File FileName="MyBlogApp/Data/ApplicationDbContext.cs" Line="20" Column="30" />
-      <File FileName="MyBlogApp/Models/Blog.cs" Line="1" Column="1" />
+      <File FileName="MyBlogApp/Models/Blog.cs" Line="17" Column="44" />
+      <File FileName="MyBlogApp/Data/Migrations/20211230200235_addCategoryIdColumnCreateCategoryTable.cs" Line="52" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,11 +21,11 @@
               </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True">
-                <Node name="Migrations" expanded="True" />
+                <Node name="Migrations" expanded="True">
+                  <Node name="20211230200235_addCategoryIdColumnCreateCategoryTable.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Models" expanded="True">
-                <Node name="Blog.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Blogs" expanded="True" />
