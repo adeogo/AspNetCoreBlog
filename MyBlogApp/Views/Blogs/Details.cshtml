@@ -1,0 +1,32 @@
+@model MyBlogApp.Models.Blog
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(model => model.Title)</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        
+       
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        
+       
+        <dd class = "col-sm-12">
+            <span class="float-right">@Model.User.UserName - @Html.DisplayFor(model => model.CreatedDate)</span>
+        </dd>
+    </dl>
+</div>
+<div>
+
+    @if (Model.UserId.Equals(ViewData["UserId"])) {
+
+        <a asp-action="Edit" asp-route-id="@Model.BlogId" class="btn btn-info btn-sm mr-2">Edit</a>
+
+    }
+    <a asp-action="Index" class="btn btn-primary btn-sm">Home</a>
+</div>

@@ -1,0 +1,53 @@
+﻿<Properties StartupConfiguration="{2A35CEB5-3718-43B1-A055-9C836B4A3238}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyBlogApp/Data/ApplicationDbContext.cs">
+    <Files>
+      <File FileName="MyBlogApp/Controllers/BlogsController.cs" Line="40" Column="56" />
+      <File FileName="MyBlogApp/Views/Blogs/Index.cshtml" Line="39" Column="36" />
+      <File FileName="MyBlogApp/Models/Blog.cs" Line="22" Column="28" />
+      <File FileName="MyBlogApp/Views/Blogs/Details.cshtml" Line="20" Column="83" />
+      <File FileName="MyBlogApp/Views/Shared/_Layout.cshtml" Line="14" Column="74" />
+      <File FileName="MyBlogApp/Views/Shared/_LoginPartial.cshtml" Line="6" Column="37" />
+      <File FileName="MyBlogApp/Startup.cs" Line="32" Column="1" />
+      <File FileName="MyBlogApp/Areas/Identity/Pages/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="MyBlogApp/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="MyBlogApp/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="MyBlogApp/Models/User.cs" Line="8" Column="27" />
+      <File FileName="MyBlogApp/Program.cs" Line="16" Column="1" />
+      <File FileName="MyBlogApp/Data/ApplicationDbContext.cs" Line="19" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyBlogApp" expanded="True">
+            <Node name="MyBlogApp" expanded="True">
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="Migrations" expanded="True" />
+                <Node name="ApplicationDbContext.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Blogs" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MyBlogApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,61 @@
+@model IEnumerable<MyBlogApp.Models.Blog>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home <a asp-action="Create" class="btn btn-primary btn-sm float-right">Add Post</a></h1> 
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+
+            <td>
+                @item.User.UserName
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+
+
+            <td>
+                @*@ViewData["UserId"]*@
+
+
+                <a asp-action="Details" asp-route-id="@item.BlogId" class="btn btn-primary btn-sm mr-2">View</a>
+
+                @if (@item.UserId.Equals(ViewData["UserId"]))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.BlogId" class="btn btn-info btn-sm mr-2">Edit</a>
+
+                                        <a asp-action="Delete" asp-route-id="@item.BlogId" class="btn btn-danger btn-sm mr-2">Delete</a>
+                                                        }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
