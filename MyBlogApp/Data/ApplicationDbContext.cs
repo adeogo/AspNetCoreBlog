@@ -16,6 +16,7 @@ namespace MyBlogApp.Data
         }
 
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Category> Categories { get; set; }
         //public DbSet<IdentityUser> AspNetUsers { get; set; }
     }
 }

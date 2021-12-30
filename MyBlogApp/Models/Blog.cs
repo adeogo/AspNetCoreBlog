@@ -17,6 +17,10 @@ namespace MyBlogApp.Models
         public string Content { get; set; }
         public string IsDraft { get; set; }
 
+        [ForeignKey("Categories")]
+        [DisplayName("Category")]
+        public int CategoryId { get; set; }
+
         [DisplayName("Date")]
         public string CreatedDate { get; set; }
 

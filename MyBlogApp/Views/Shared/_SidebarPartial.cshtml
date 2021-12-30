@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@*<ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+    </li>
+                    <li class="nav-item">
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                        </form>
+                    </li> }
+                                else
+                                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                    </li>}
+    </ul>*@
+
+
+<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+    <h1 id="colorlib-logo"><a href="index.html">elen<span>.</span></a></h1>
+    <nav id="colorlib-main-menu" role="navigation">
+        <ul>
+            <li class="colorlib-active"><a asp-controller="Blogs">Home</a></li>
+            @*<li><a href="photography.html">Photography</a></li>
+                <li><a href="travel.html">Travel</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="about.html">About</a></li>*@
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="colorlib-footer">
+        <p>
+            <ul>
+                @if (SignInManager.IsSignedIn(User))
+                {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" asp-controller="Blogs" asp-action="Create">New Post</a>
+                    </li>
+
+                                    <li class="nav-item">
+                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                            <button type="submit" class="nav-link btn btn-link text-dark mr-auto ml-auto">Logout</button>
+                                        </form>
+                                    </li>
+ }
+
+                                else
+                                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                    </li>}
+
+                @*<li><a href="#"><i class="icon-twitter"></i></a></li>*@
+
+            </ul>
+    </div>
+</aside> <!-- END COLORLIB-ASIDE -->

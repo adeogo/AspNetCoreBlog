@@ -3,45 +3,76 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyBlogApp</title>
+    <title>@ViewData["Title"] - elen Blog</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+    <link rel="stylesheet" href="~/template/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/css/animate.css">
+
+    <link rel="stylesheet" href="~/template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/template/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/template/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="~/template/css/aos.css">
+
+    <link rel="stylesheet" href="~/template/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="~/template/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/template/css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="~/template/css/flaticon.css">
+    <link rel="stylesheet" href="~/template/css/icomoon.css">
+    <link rel="stylesheet" href="~/template/css/style.css">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Blogs" asp-action="Index">MyBlogApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Blogs" asp-action="Index">Home</a>
-                        </li>
-                        
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MyBlogApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <div id="colorlib-page">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+        <partial name="_SidebarPartial" />
+
+        <div id="colorlib-main">
+            @RenderBody()
+            <footer class="ftco-footer ftco-bg-dark ftco-section">
+                <div class="container px-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p>
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | elen Blog.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div><!-- END COLORLIB-MAIN -->
+    </div><!-- END COLORLIB-PAGE -->
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    <script src="~/template/js/jquery.min.js"></script>
+    <script src="~/template/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/template/js/popper.min.js"></script>
+    <script src="~/template/js/bootstrap.min.js"></script>
+    <script src="~/template/js/jquery.easing.1.3.js"></script>
+    <script src="~/template/js/jquery.waypoints.min.js"></script>
+    <script src="~/template/js/jquery.stellar.min.js"></script>
+    <script src="~/template/js/owl.carousel.min.js"></script>
+    <script src="~/template/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/template/js/aos.js"></script>
+    <script src="~/template/js/jquery.animateNumber.min.js"></script>
+    <script src="~/template/js/bootstrap-datepicker.js"></script>
+    <script src="~/template/js/scrollax.min.js"></script>
+    <script src="~/template/js/main.js"></script>
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

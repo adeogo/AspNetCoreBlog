@@ -20,5 +20,9 @@
   <ItemGroup>
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="Views\Categories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Categories\" />
   </ItemGroup>
 </Project>
