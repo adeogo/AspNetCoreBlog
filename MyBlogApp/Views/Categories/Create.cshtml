@@ -1,0 +1,59 @@
+﻿@model MyBlogApp.Models.Category
+
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-sm-12">
+            <h3>Create Category</h3>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="CreateCategory">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @if (ViewData["errMsg"] != null)
+                {
+                <div class="alert alert-danger">@ViewData["errMsg"]</div>
+                }
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="CategoryName" class="control-label"></label>
+                            <input asp-for="CategoryName" class="form-control" />
+                            <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Slug" class="control-label"></label>
+                            <input asp-for="Slug" class="form-control" />
+                            <span asp-validation-for="Slug" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <input type="submit" value="Create" class="btn btn-primary" />
+
+
+
+                    <a class="btn btn-sm btn-info" asp-action="Index">All Categories</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

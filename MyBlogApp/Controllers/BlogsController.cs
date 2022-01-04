@@ -13,7 +13,8 @@ using MyBlogApp.Models;
 
 namespace MyBlogApp.Controllers
 {
-    public class BlogsController : Controller
+
+    public class BlogsController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -36,29 +37,33 @@ namespace MyBlogApp.Controllers
 
             ViewData["UserId"] = UserId;
             return View(await _context.Blogs
-                                        .Where(b => b.IsDraft.Equals("yes"))
+                                        .Where(b => b.IsDraft.Equals("no"))
                                         .Include(b => b.User)
-                                        //             .Join(_context.AspNetUsers,
-                                        // x => x.UserId,
-                                        // y => y.Id,
-                                        //(x, y) => new { y.UserName })
+                                        .Include(b => b.Category)
+                                        .OrderByDescending(b => b.BlogId)
                                         .ToListAsync());
 
+        }
 
 
-
+        [HttpGet("category/{slug}")]
+        public IActionResult Category(string slug)
+        {
+            return Ok(slug);
         }
 
         // GET: Blogs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+
+
             if (id == null)
             {
                 return NotFound();
             }
 
             var blog = await _context.Blogs
-                .Include(b=>b.User)
+                .Include(b => b.User)
                 .FirstOrDefaultAsync(m => m.BlogId == id);
             if (blog == null)
             {
@@ -79,6 +84,12 @@ namespace MyBlogApp.Controllers
         [Authorize]
         public IActionResult Create()
         {
+
+            IEnumerable<Category> categories = _context.Categories.ToList();
+
+
+            ViewBag.Categories = categories;
+
             return View();
         }
 
@@ -88,7 +99,7 @@ namespace MyBlogApp.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,IsDraft")] Blog blog)
+        public async Task<IActionResult> Create([Bind("Title,Content,IsDraft, CategoryId")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -120,6 +131,12 @@ namespace MyBlogApp.Controllers
             {
                 return NotFound();
             }
+
+            IEnumerable<Category> categories = _context.Categories.ToList();
+
+
+            ViewBag.Categories = categories;
+
             return View(blog);
         }
 
@@ -129,9 +146,9 @@ namespace MyBlogApp.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogId,UserId,Title,Content,IsDraft,CreatedDate")] Blog blog)
+        public async Task<IActionResult> Edit(int id, Blog blog)
         {
-            if (id != blog.BlogId)
+            if (id == 0)
             {
                 return NotFound();
             }
@@ -140,7 +157,15 @@ namespace MyBlogApp.Controllers
             {
                 try
                 {
-                    _context.Update(blog);
+                    Blog blogInDb = _context.Blogs.Where(b => b.BlogId == id).FirstOrDefault();
+
+                    blogInDb.Title = blog.Title;
+                    blogInDb.Content = blog.Content;
+                    blogInDb.CategoryId = blog.CategoryId;
+                    blogInDb.IsDraft = blog.IsDraft;
+
+
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

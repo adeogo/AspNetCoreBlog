@@ -14,6 +14,8 @@ namespace MyBlogApp.Models
         public string UserId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+
+        [DisplayName("Is Draft")]
         public string IsDraft { get; set; }
 
         [DisplayName("Category")]
